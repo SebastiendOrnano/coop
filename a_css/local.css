@@ -1,0 +1,445 @@
+/*<div class="page-wrapper">
+<main class="page-body container-xl px-md-5 px-sm-3  mt-3" id="sqlpage_main_wrapper"><h1 class="mt-2 mb-1 text-center " >
+</main>
+<footer class="w-100 text-center fs-6 my-2 text-secondary" id="sqlpage_footer">
+</footer>
+</div>*/
+
+
+.page-wrapper{
+  background-color:beige;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  background-color:beige;
+  max-height: 100%;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  flex-grow: 1;
+}
+
+#coop_hero{
+  max-height: 200px;
+}
+
+.hero-image{
+  max-height: 200px;
+  max-width:200px;
+}
+
+#sqlpage_footer{
+  background-color:beige;
+  max-height: 80px;
+  margin-top:-50px;
+  padding-top: 15px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+footer p {
+  background-color:beige;
+  color: black;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.1em;
+  font-size: smaller;
+  border-width: 10px;
+}
+
+footer a:hover {
+  background-color: gold;
+}
+
+footer a {
+  background-color:beige;
+   color: black;
+}
+
+footer a:hover {
+  background-color: gold;
+}
+
+.foldablemargin {
+  margin-top: 20px;
+  border-color: brown;
+  }
+
+.accordion-header{ 
+  border-color: brown;
+  background-color: lightgreen;}
+
+.accordion-body{ 
+    border-color: brown;
+    background-color: lightcyan;}
+
+.member_portrait_left{
+  height:120px;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.member_portrait_center{
+  max-width: 100%;
+  max-height: 100%;
+  height:120px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#portait_img {
+  height:120px;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: 320px
+  }
+
+.carousel-caption active a:hover {
+    background-color: gold;
+  }
+
+.carousel-caption a {
+
+    background-color:lightblue;
+    color: blue;
+  }
+
+td img{
+  height:40px;
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+/*
+
+.datagrid{
+  grid-gap: var(--tblr-datagrid-padding);
+  grid-template-columns: repeat(auto-fit,minmax(var(--tblr-datagrid-item-width),1fr));
+}*/
+
+.datagrid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.avatar{
+  width:auto;
+}
+
+.datagrid-item img{
+ /* background-color:yellow;*/
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.datagrid-item{ 
+  max-width: 100%;
+  max-height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.datagrid-content{ 
+  max-width: 100%;
+  max-height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.datagrid-content img{ 
+  height:120px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+
+
+
+
+#gold img{ 
+  max-height: 40px
+}
+#silver img{ 
+  max-height: 40px
+}
+#bronze img{ 
+  max-height: 40px
+}
+
+#social_network img{ 
+  max-height: 40px
+}
+
+#short_cv {
+  background-color:lightgrey;
+}
+
+#panel_profile{
+  height: 80px;
+
+}
+
+#member_edit_picture {
+  text-align:left;
+}
+#member_edit_picture img{
+  display: inline-block;
+  margin-left: 80px;
+  height: 80px;
+}
+#member_choose_picture{
+  text-align:center;
+}
+#member_choose_picture img{
+  display: inline-block;
+  margin-left: 80px;
+  height: 80px;
+}
+
+#download_selection_table img{
+  display: inline-block;
+  text-align:left;
+  height: 40px;
+}
+
+#home_page{
+  height: 400px;
+}
+
+.hero-image{
+  height: 300px;
+  width:300px;
+}
+
+.csv{
+  display: inline;
+}
+
+
+#event_place + div{
+  background-color:lightgray;
+  font-weight: bold;
+  width: 400px;
+  margin-left:40px;
+}
+
+#forum_message_md + div{
+  background-color:white;
+  border-style: solid;
+  border-width: 3x;
+  border-color: darkblue;
+
+  padding:5px;
+  margin-top:20px;
+  
+  font-weight: bold;
+  margin-left:40px;
+  margin-right:40px;
+}
+
+
+/*
+#supervisor_panel .datagrid{
+  border: blue;
+  border: solid;
+  border-width: 4px;
+  border-color: brown;
+ 
+}
+
+#presentation + div {
+  border: blue;
+  border: solid;
+  border-width: 4px;
+  border-color: brown;
+ background-color: blue;
+ 
+}*/
+
+
+-- layout faqnews_pulic_display.sql
+
+#news_list_id {
+margin-top:20px;
+}
+
+.news_content_class{
+  margin-top:20px;
+}
+
+.news_content_class button
+{
+  background-color:grey;
+  color: white;
+}
+
+.news_content_class button.collapsed
+{
+  background-color:red;
+  font-size: large;
+  font-weight: bold ;
+  color: white;
+}
+
+.news_content_class button:not(.collapsed)
+{
+  background-color:red;
+  font-size: large;
+  color: white;
+}
+
+.news_content_id div
+{
+  background-color:ivory;
+}
+
+-- layout faq.sql
+
+#faq_list_id 
+{
+margin-top:20px;
+}
+  
+.faq_content_class
+{
+margin-top:20px;
+}
+
+.faq_content_class div
+{
+  background-color:ivory;
+}
+
+.faq_content_class button.collapsed
+{
+  background-color:red;
+  font-size: large;
+  font-weight: bold ;
+  color: white;
+}
+
+.faq_content_class button:not(.collapsed)
+{
+  background-color:red;
+  font-size: large;
+  color: white;
+}
+
+
+#form_meeting label{
+/*font-size: smaller;*/
+ display: inline;
+}
+
+/* 
+#form_meeting input{
+font-size: smaller;
+ }*/
+
+ /*#form_meeting select{
+  font-size: smaller;
+ }*/
+
+ .breadcrumb{
+  font-size: smaller;
+/*  background-color:white;*/
+ }
+
+ #panel_wokspace_display .card-header
+ {
+margin:0;
+padding: 0;
+background-color:red;
+font-weight: bold;
+color:white;
+ }
+
+ #panel_wokspace_display .card-body
+ {
+margin:0;
+padding: 0;
+
+/*  background-color:yellow;*/
+ }
+
+ #panel_wokspace_display .datagrid
+ {
+margin:0;
+padding: 0;
+row-gap: 0px;
+/* background-color:green;*/
+ }
+
+ #panel_wokspace_display .datagrid-item
+ {
+margin-bottom:-10px;
+padding: 0;
+/*background-color:blue;*/
+max-height:80px;
+ }
+
+ #panel_wokspace_display .datagrid-content
+ {
+margin:0px;
+padding: 0;
+/* background-color:red;*/
+ }
+
+#panel_wokspace_display .datagrid-title
+{
+margin:0px;
+padding: 0;
+height:0;
+/* background-color:red;*/
+}
+
+#chat_message_md + div{
+  background-color:white;
+  border-style: solid;
+  border-width: 3x;
+  border-color: darkblue;
+
+  padding:5px;
+  margin-top:20px;
+  
+  font-weight: bold;
+  margin-left:40px;
+  margin-right:40px;
+}
