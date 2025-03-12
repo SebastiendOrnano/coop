@@ -1,0 +1,6 @@
+{
+  "database_url": "sqlite://./sqlpage/sqlpage.db?mode=rwc",
+  "content_security_policy": "",
+  "allow_exec" : true,
+  "sqlite_extensions": ["mod_spatialite"]
+}
