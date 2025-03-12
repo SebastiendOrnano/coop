@@ -18,7 +18,7 @@ select
     '/e_projects/project_hub_display_4.sql?project_id='||$project_id     as link;  
 select 
     '/e_project_building_rooms/room_main_display_4.sql?building_id='||$building_id    as link,
-    'Retour à la liste des lieux'  as title,
+    'Retour à la liste des lieux'  as title;
 
 select 
     'datagrid'              as component;
@@ -66,16 +66,6 @@ select
     'divider' as component,
     'images rattachées au lieu'    as contents,
     'blue' as color;
-
-select 
-    'button' as component,
-    'sm'     as size;
-select 
-    '/e_project_building_rooms/room_picture_form_4.sql?room_id='||$room_id     as link,
-    'green' as outline,
-    TRUE as important,
-    'Créer une nouvelle image ou plan'  as title,
-    'copy-plus'  as icon;
 
 SELECT 
     'table'               AS component, 
