@@ -1,0 +1,112 @@
+INSERT INTO orga
+(
+	orga_name,
+	orga_acronym,
+	orga_logo_url,
+	orga_punchline,
+	orga_summary,
+	orga_adress,
+	orga_postal_code,
+	orga_town,
+	orga_country,
+	orga_contact_phone,
+	orga_contact_mail,
+	orga_latitude,
+	orga_longitude,
+	orga_status,
+	orga_legal_status,
+	orga_no_siren,
+	orga_no_siret,
+	orga_no_rna,
+	orga_no_tva_intracom,
+	orga_code_naf_ape,
+	orga_date_creation,
+	orga_number_employees
+)
+VALUES 
+(
+	:orga_name,
+	:orga_acronym,
+	:orga_logo_url,
+	:orga_punchline,
+	:orga_summary,
+	:orga_adress,
+	:orga_postal_code,
+	:orga_town,
+	:orga_country,
+	:orga_contact_phone,
+	:orga_contact_mail,
+	:orga_latitude,
+	:orga_longitude,
+	'active',
+	:orga_legal_status,
+	:orga_no_siren,
+	:orga_no_siret,
+	:orga_no_rna,
+	:orga_no_tva_intracom,
+	:orga_code_naf_ape,
+	:orga_date_creation,
+	:orga_number_employees
+)
+
+SET orga_id = (SELECT MAX(orga_id) FROM orga WHERE orga_name = :orga_name);
+
+INSERT INTO orga_dept
+(
+	orga_id,
+	orga_dept_name,
+	orga_dept_acronym,
+	orga_dept_logo_url,
+	orga_dept_punchline,
+	orga_dept_summary,
+	orga_dept_adress,
+	orga_dept_postal_code,
+	orga_dept_town,
+	orga_dept_country,
+	orga_dept_contact_phone,
+	orga_dept_contact_mail,
+	orga_dept_latitude,
+	orga_dept_longitude,
+	orga_dept_rank,
+	orga_dept_status,
+	orga_dept_legal_status,
+	orga_dept_no_siren,
+	orga_dept_no_siret,
+	orga_dept_no_rna,
+	orga_dept_no_tva_intracom,
+	orga_dept_code_naf_ape,
+	orga_dept_date_creation,
+	orga_dept_number_employees
+)
+VALUES 
+(
+	$orga_id,
+	:orga_name,
+	:orga_acronym,
+	:orga_logo_url,
+	:orga_punchline,
+	:orga_summary,
+	:orga_adress,
+	:orga_postal_code,
+	:orga_town,
+	:orga_country,
+	:orga_contact_phone,
+	:orga_contact_mail,
+	:orga_latitude,
+	:orga_longitude,
+	'main',
+	'active',
+	:orga_legal_status,
+	:orga_no_siren,
+	:orga_no_siret,
+	:orga_no_rna,
+	:orga_no_tva_intracom,
+	:orga_code_naf_ape,
+	:orga_date_creation,
+	:orga_number_employees
+)
+
+RETURNING 'redirect' AS component,
+ '/b_orga/orga_main_display_4.sql' AS link;
+
+
