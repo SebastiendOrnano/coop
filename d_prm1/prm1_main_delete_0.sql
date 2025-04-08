@@ -5,11 +5,10 @@ DELETE FROM prm2_sub_employees WHERE prm1_id = $prm1_id;
 
 DELETE FROM prm3_participants WHERE prm1_id = $prm1_id;
 
-DELETE FROM project_participants WHERE prm1_id = $prm1_id;
 
-DELETE FROM project_participants_workpackage WHERE prm1_id = $prm1_id;
+DELETE FROM project_workpackage_participants WHERE prm1_id = $prm1_id;
 
-DELETE FROM project_participants_worksequence WHERE prm1_id = $prm1_id;
+DELETE FROM project_worksequence_participants WHERE prm1_id = $prm1_id;
 
 DELETE FROM prm1_doc WHERE prm1_id  = $prm1_id;
 
