@@ -1,18 +1,22 @@
 SELECT 'dynamic' AS component, sqlpage.run_sql('a_shells/shell_4.sql') AS properties;
 
+select 
+    'breadcrumb' as component;
+select 
+    'Home' as title,
+    '/'    as link;
+select 
+    'Gestion Superviseur'         as title,
+    '/a_panels/panel_supervisor_4.sql' as link;
+
+
+
 
 -- Supervisor panel to manage prm1
 select 
     'datagrid'              as component,
     'panel_prm1_display' as id,
     'PMR : gestion des personnes physiques' as title;
-
-select 
-    '/a_panels/panel_supervisor_4.sql'         as link,
-    'Retour au tableau de bord superviseur'    as description,
-    'corner-down-left-double'                  as icon,
-    TRUE                                       as active,
-    'white'                                    as color;
 
 select 
     '/d_prm1/prm1_main_form_4.sql'                   as link,
