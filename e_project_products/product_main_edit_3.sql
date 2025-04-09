@@ -17,35 +17,24 @@ select
 
 SELECT 
     'form' as component,
-    'Enregistrer un materiau' as title,
-    'Créer' as validate,
+    'Actualiser une référence matériau' as title,
+    'Actualiser' as validate,
     'Clear' as reset,
-    '/e_project_products/product_main_create_0.sql' as action;
-
-select 
-    'product_category_id'            as name,
-    'Catégorie'                  as label,
-    'select'                       as type,
-    4                             AS width,
-    TRUE as required,
-'Choisir une categorie dans la liste...'    as  empty_option,
-json_group_array(json_object(
-    'label', product_category_name,
-    'value', product_category_id
-)) as options
-from project_products_categories where product_category_parent_id=:product_category_id;
+    '/e_project_products/product_main_update_0.sql?product_id='||$product_id as action;
 
 SELECT
     'product_name' as name,
     'text' as type,  
     'Nom' as label,
-    9 AS width,
+    (select product_name from project_products where product_id = $product_id) as value,
+    12 AS width,
     TRUE as required;
 
 SELECT
     'product_ienes_url' as name,
     'text' as type,  
     'URL Fiche base IENES' as label,
+    (select product_ienes_url from project_products where product_id = $product_id) as value,
     12 AS width,
     TRUE as required;
 
@@ -53,25 +42,27 @@ SELECT
     'product_functional_unit'                as name,
     'Unité fonctionnelle'                 as label,
     'textarea'                           as type,
+    (select product_functional_unit from project_products where product_id = $product_id) as value,
     12                                  as width;
 
 SELECT 
     'product_unit'                as name,
     'Unité'                 as label,
     'text'                           as type,
+    (select product_unit from project_products where product_id = $product_id) as value,
     4                                  as width;
 
 SELECT 
     'product_climate_change_indicator'                as name,
     'Indicateur réchauffement climatique total'                 as label,
     'text'                           as type,
+    (select product_climate_change_indicator from project_products where product_id = $product_id) as value,
     'kg CO2 eq.'                     as suffix,
     4                                as width;
 
 SELECT
     'product_summary' as name,
     'textarea' as type,
+    (select product_summary from project_products where product_id = $product_id) as value,
     12                                  as width,
     'Commentaires' as label;
-
-
