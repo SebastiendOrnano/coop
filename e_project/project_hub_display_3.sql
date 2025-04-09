@@ -39,12 +39,6 @@ SELECT
     'blue'                             as color;
 
 SELECT
-    '/e_project_participants/project_participant_main_display_3.sql?project_id='||$project_id   as link,
-    'Participants'                      as description,
-    'users'                             as icon,
-    'green'                             as color;
-
-SELECT
     '/e_project_docs/project_doc_main_display_3.sql?project_id='||$project_id   as link,
     'Documents'                      as description,
     'book'                           as icon,
