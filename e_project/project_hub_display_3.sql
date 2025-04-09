@@ -20,11 +20,11 @@ select
     'panel_hub_workspace_display' as id,
     'GESTION DU PROJET: '||$project_name as title;
 
-SELECT
-    '/e_project_workpackage/workpackage_hub_display_3.sql?project_id='||$project_id as link,
-    'travaux - séquences (WKP-WKS)'                    as description,
-    'shovel-pitchforks'                                as icon,
-    'red'                                              as color;
+select 
+    '/e_project_workpackage/workpackage_main_form0_3.sql?project_id='||$project_id       as link,
+    'Création d''un lot de travaux'                  as description,
+    'shovel-pitchforks'                                      as icon,
+    'yellow'                                         as color;
 
 select 
     '/e_project_meeting/project_meeting_main_display_3.sql?project_id='||$project_id    as link,
@@ -75,3 +75,23 @@ SELECT
     'Galerie photos'                                  as description,
     'photo-search'                                     as icon,
     'orange'                                           as color;
+
+SELECT 
+    'table'               AS component, 
+    'Liste des lots de travaux rattachées au projet' AS title, 
+    TRUE                  AS sort, 
+    'View'                AS markdown,
+    'Hub'                AS markdown,
+    FALSE                 AS search;
+
+SELECT
+    workpackage_id            AS Id,
+    '['||workpackage_name||'](/e_project_workpackage/workpackage_hub_display_3.sql?workpackage_id='||workpackage_id||')'         AS Hub,
+    workpackage_type             as Type,
+    workpackage_mode             as Mode,
+    workpackage_rank             as Rank,
+'[Edit](/e_project_workpackage/workpackage_main_edit_3.sql?workpackage_id='||workpackage_id||')'  as View
+FROM project_workpackage
+WHERE project_id = $project_id and workpackage_status='active'
+ORDER BY workpackage_id ASC;
+

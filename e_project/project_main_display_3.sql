@@ -19,10 +19,10 @@ select
     'map-search'                                              as icon,
     'green'   
 select 
-    '/e_project_materials/material_main_display_3.sql'         as link,
+    '/e_project_products/product_main_display_3.sql'         as link,
     'Base des matériaux'                  as description,
     'sandbox'                                              as icon,
-    'green'                                             as color;                                          as color;
+    'green'                                             as color;
 select 
     '/e_project/project_map_private_display_3.sql'         as link,
     'Carte des projets '                  as description,
@@ -40,8 +40,7 @@ SELECT
     project_id               AS Id,
     project_name            AS Nom,
     project_category        AS Categorie,
-   '[Participants](/e_project_participants/project_participant_main_display_3.sql?project_id='||project_id||')
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Hub](/e_project/project_hub_display_3.sql?project_id='||project_id||')'  AS View
+   '[Hub](/e_project/project_hub_display_3.sql?project_id='||project_id||')'  AS View
 FROM project
 WHERE project_name IS NOT NULL AND project_status !='archived'
 ORDER BY project_id ASC;
