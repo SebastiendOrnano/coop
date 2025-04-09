@@ -38,7 +38,7 @@ SELECT
     building_id         AS Id,
    building_name        AS Nom,
    building_town        AS Ville,
-   '[Map](/e_project_building/building_map_display_3.sql?building_id='||building_id||')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   '[Map](/e_project_building/building_location_display_3.sql?building_id='||building_id||')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    [view](/e_project_building/building_main_profile_3.sql?building_id='||building_id||')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    [rooms](/e_project_building_rooms/room_main_display_3.sql?building_id='|| building_id|| ')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    [Edit](/e_project_building/building_main_edit_3.sql?building_id=' || building_id ||')'    AS View
