@@ -19,10 +19,8 @@ select
     'Hub du projet'            as title,
     '/e_project/project_hub_display_3.sql?project_id='||$project_id     as link; 
 select 
-    'Hub lot de travaux'    as description,
-    '/e_project_workpackage/workpackage_hub_display_3.sql?workpackage_id='||$workpackage_id   as link,
-    'corner-down-left'                         as icon,
-    'yellow'                                    as color;
+    'Hub lot de travaux'    as title,
+    '/e_project_workpackage/workpackage_hub_display_3.sql?workpackage_id='||$workpackage_id   as link;
 
 
 select 
