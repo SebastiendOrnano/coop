@@ -72,7 +72,7 @@ SELECT
 SELECT 
     'form' as component,
     'Calcul du bilan carbone' as title,
-    'Créer' as validate,
+    'Actualiser le calcul bilan carbone' as validate,
     'Clear' as reset,
     '/e_project_workpackage_materials/material_main_update_0.sql?material_id='||$material_id  as action;
 

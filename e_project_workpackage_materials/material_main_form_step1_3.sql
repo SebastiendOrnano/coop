@@ -1,4 +1,4 @@
-SELECT 'dynamic' AS component, sqlpage.run_sql('a_shells/shell_4.sql') AS properties;
+SELECT 'dynamic' AS component, sqlpage.run_sql('a_shells/shell_3.sql') AS properties;
 
 set workpackage_name = select workpackage_name from project_workpackage where workpackage_id = $workpackage_id;
 set project_id=select project_id from project_workpackage where workpackage_id=$workpackage_id ;
