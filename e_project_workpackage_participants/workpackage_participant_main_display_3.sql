@@ -14,14 +14,14 @@ select
     'Gestion éditeur'         as title,
     '/a_panels/panel_editor_3.sql' as link;
  select 
-    'Retour à la liste des projets'            as title,
+    'Liste des projets'            as title,
     '/e_project/project_main_display_3.sql'     as link;
  select 
-    'Retour au hub du projet'            as title,
+    'Hub du projet'            as title,
     '/e_project/project_hub_display_3.sql?project_id='||$project_id     as link; 
 select 
-    'Retour à la gestion des lots de travaux'    as title,
-    '/e_project_workpackage/workpackage_hub_display_3.sql?&project_id='||$project_id       as link;
+    'Hub lot de travaux'            as title,
+    '/e_project_workpackage/workpackage_hub_display_3.sql?workpackage_id='||$workpackage_id     as link;
 
 
 

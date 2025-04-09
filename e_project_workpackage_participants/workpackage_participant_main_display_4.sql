@@ -18,7 +18,7 @@ select
     '/e_project/project_hub_display_4.sql?project_id='||$project_id     as link; 
 select 
     'Retour à la gestion des lots de travaux'    as title,
-    '/e_project_workpackage/workpackage_hub_display_4.sql?workpackage_id='||$workpackage_id||'&project_id='||$project_id       as link;
+    '/e_project_workpackage/workpackage_hub_display_4.sql?workpackage_id='||$workpackage_id      as link;
 
 
 
