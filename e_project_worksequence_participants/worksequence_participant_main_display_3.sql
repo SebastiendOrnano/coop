@@ -1,22 +1,35 @@
 SELECT 'dynamic' AS component, sqlpage.run_sql('a_shells/shell_3.sql') AS properties;
 
-
+SET workpackage_id = select workpackage_id from project_worksequence where worksequence_id=$worksequence_id ;
+SET project_id = select project_id from project_workpackage where workpackage_id=$workpackage_id;
 SET worksequence_name= select worksequence_name FROM project_worksequence where worksequence_id=$worksequence_id;
+
+select 
+    'breadcrumb' as component;
+select 
+    'Home' as title,
+    '/'    as link;
+select 
+    'Gestion éditeur'         as title,
+    '/a_panels/panel_editor_3.sql' as link;
+ select 
+    'Liste des projets'            as title,
+    '/e_project/project_main_display_3.sql'     as link;
+ select 
+    'Hub du projet'            as title,
+    '/e_project/project_hub_display_3.sql?project_id='||$project_id     as link; 
+select 
+    'Hub lot de travaux'    as description,
+    '/e_project_workpackage/workpackage_hub_display_3.sql?workpackage_id='||$workpackage_id   as link,
+    'corner-down-left'                         as icon,
+    'yellow'                                    as color;
+
 
 select 
     'datagrid'              as component,
     'panel_worksequence_doc_display' as id,
     'Gestion des partcipants du projet : '||$worksequence_name as title;
-select 
-    '/a_panels/panel_editeur.sql'         as link,
-    'Retour au tableau de bord superviseur'    as description,
-    'corner-down-left-double'                  as icon,
-    'blue'                                    as color;
-select 
-    'Retour gestion des projets'    as description,
-    '/e_project_workpackage/workpackage_hub_display_3.sql'  as link,
-    'corner-down-left'                         as icon,
-    'yellow'                                    as color;
+
 select 
     '/e_project_worksequence_participants/worksequence_participant_main_form1_3.sql?worksequence_id='||$worksequence_id             as link,
     'Ajout d''un nouveau participant (prm1) '                  as description,
