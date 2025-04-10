@@ -3,25 +3,17 @@ SELECT 'dynamic' AS component, sqlpage.run_sql('a_shells/shell_5.sql') AS proper
 select 
     'breadcrumb' as component;
 select 
+    'breadcrumb' as component;
+select 
     'Home' as title,
     '/'    as link;
 select 
-    'Gestion Admin'         as title,
+    'Gestion admin'         as title,
     '/a_panels/panel_admin_5.sql' as link;
+ select 
+    'Liste des sections'            as title,
+    '/a_info/section_help_display_5.sql'     as link; 
  
-select 
-    'datagrid'              as component,
-    'Gestion des info administratives' as title;
-SELECT
-    '/a_info/section_main_form_5.sql'  as link,
-    'Créer une nouvelle section'                      as description,
-    'section'                                         as icon,
-    'yellow'                                          as color;
-SELECT
-    '/a_info/section_archive_display_5.sql'       as link,
-    'Sections archivées'                          as description,
-    'archive'                                     as icon,
-    'red'                                         as color;
 
 
 /*render the table
@@ -53,8 +45,8 @@ SELECT
    section_status  as Publication,
    section_title               AS Titre,
  
-   '[Edit](/a_info/section_main_edit_5.sql?section_id='||section_id|| ')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Delete](/a_info/section_main_delete_0.sql?section_id='||section_id||')'    AS View
+   '[Edit](/a_info/section_help_edit_5.sql?section_id=' || section_id || ')&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Delete](/a_info/section_help_delete_5.sql?section_id=' || section_id|| ')'    AS View
 FROM info_sections
-WHERE section_status !='archived' AND section_category!='help-dev'
+WHERE section_status !='active' AND section_category='help-dev'
 
 ORDER BY section_category ASC, cast(section_number as int)  ASC ;

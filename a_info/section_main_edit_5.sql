@@ -47,11 +47,7 @@ SELECT
     'Langue'                                     as label,
     TRUE                                         as required,
     2                                            AS width,
-    'section_status'        as name,
-    'statut de publication actuel'      as label,
-    'select'                            as type,
-    4                    AS width,
-    'choisir unstatut dans la liste...'    as  empty_option,
+    'choisir une langue dans la liste...'    as  empty_option,
     json_group_array(json_object('label',i.choice_label, 'value', i.choice_value))  AS options
     FROM choices_items AS i
     LEFT JOIN (select choice_category_id, choice_category_name from choices_categories)  AS c 
@@ -65,7 +61,7 @@ SELECT
     'statut de publication actuel'      as label,
     'select'                            as type,
     4                    AS width,
-    'choisir unstatut dans la liste...'    as  empty_option,
+    'choisir un statut dans la liste...'    as  empty_option,
     json_group_array(json_object('label',i.choice_label, 'value', i.choice_value))  AS options
     FROM choices_items AS i
     LEFT JOIN (select choice_category_id, choice_category_name from choices_categories)  AS c 

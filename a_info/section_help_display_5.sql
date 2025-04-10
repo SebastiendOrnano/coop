@@ -10,9 +10,6 @@ select
 select 
     'Gestion admin'         as title,
     '/a_panels/panel_admin_5.sql' as link;
- select 
-    'Liste des sections'            as title,
-    '/a_info/section_help_display_5.sql'     as link; 
  
 select 
     'datagrid'              as component,
@@ -23,7 +20,11 @@ SELECT
     'Créer une nouvelle section'                  as description,
     'section'                                     as icon,
     'yellow'                                      as color;
-
+SELECT
+    '/a_info/section_help_archive_display_5.sql'  as link,
+    'Sections archivées'                          as description,
+    'archive'                                     as icon,
+    'blue'                                        as color;
 
 /*render the table
 SELECT 'table' AS component;

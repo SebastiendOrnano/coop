@@ -27,13 +27,13 @@ SELECT
     'statut de publication actuel'      as label,
     'select'                            as type,
     4                                   AS width,
-    '1: en attente de publication / 2 : publié / archive'       as description,
-    'Choisir le statut de publication...'                       as empty_option,
-    '[
-    {"label": "En attente de publication", "value": "no"},
-    {"label": "Publié", "value": "yes"},
-    {"label": "Archive", "value": "archived"}
-    ]'                                                          as options;
+    'choisir un statut dans la liste...'    as  empty_option,
+    json_group_array(json_object('label',i.choice_label, 'value', i.choice_value))  AS options
+    FROM choices_items AS i
+    LEFT JOIN (select choice_category_id, choice_category_name from choices_categories)  AS c 
+    ON i.choice_category_id = c.choice_category_id
+    where choice_category_name="status"
+    ORDER BY  i.choice_label ASC;
 
 SELECT
     'section_number' as name,
@@ -42,20 +42,19 @@ SELECT
     2 as width,
     '1, 2, 3...' AS description;
 
-
 SELECT
     'section_lang'                               as name,
     'select'                                     as type,  
     'Langue'                                     as label,
     TRUE                                         as required,
     2                                            AS width,
-    'Choisir la langue...'                       as empty_option,
-   '[
-   {"label": "Français", "value": "FR"}, 
-   {"label": "English", "value":"EN"}
-   ]'                                            as options;
-
-
+    'choisir une langue dans la liste...'    as  empty_option,
+    json_group_array(json_object('label',i.choice_label, 'value', i.choice_value))  AS options
+    FROM choices_items AS i
+    LEFT JOIN (select choice_category_id, choice_category_name from choices_categories)  AS c 
+    ON i.choice_category_id = c.choice_category_id
+    where choice_category_name="lang"
+    ORDER BY  i.choice_label ASC;
 
 SELECT
     'section_title' as name,
