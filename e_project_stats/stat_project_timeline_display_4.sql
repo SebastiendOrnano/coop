@@ -16,10 +16,6 @@ select
  select 
     'Retour au hub du projet'            as title,
     '/e_project/project_hub_display_4.sql?project_id='||$project_id     as link;   
- select 
-    'Retour à la liste des travaux'            as title,
-    '/e_project_workpackage/workpackage_hub_display_4.sql?project_id='||$project_id   as link;   
-
 
 select 
     'form'   as component,
