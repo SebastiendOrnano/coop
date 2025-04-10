@@ -26,7 +26,7 @@ SELECT
     '{"link":"/b_events/event_main_list.sql","title":"Agenda"}' as menu_item,
     '{"link":"/b_news/news_public_display.sql","title":"Actus"}' as menu_item,
     JSON('{"title":"Project","submenu":[
-    {"link":"/e_projects/project_public_display.sql","title":"Projet","icon":"presentation"}
+    {"link":"/e_project/project_public_display.sql","title":"Projet","icon":"presentation"}
     ]}') as menu_item,
     CASE WHEN $user_role IS NULL THEN  
     '{"link":"/b_faq/faq_main_form.sql","title":"contact","icon":"info-square-rounded"}' END AS menu_item,
