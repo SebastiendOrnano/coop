@@ -8,4 +8,4 @@ select
    'foldablemargin'           as class,
    TRUE                       as expanded,
    section_content            as description_md
-   from info_sections where section_category='hero' AND section_status='yes' AND section_number=$section_number;
+   from info_sections where section_category='hero' AND section_status='active' AND section_number=$section_number;

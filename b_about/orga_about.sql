@@ -11,4 +11,4 @@ select
   section_title as title,
   'foldablemargin' as class,
   section_content  as description_md
- from info_sections where section_category="about" AND section_status='yes' ORDER BY section_number ASC;
+ from info_sections where section_category="about" AND section_status='active' ORDER BY section_number ASC;
