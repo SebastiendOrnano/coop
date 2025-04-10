@@ -73,29 +73,36 @@
 [9.1. Project module: general orientation
 10](#project-module-general-orientation)
 
-[9.2 Project module: structure 11](#__RefHeading___Toc1507_4218862531)
+[9.2 Project module: functionalities
+11](#project-module-functionalities)
 
-[9.3. Project module: rights management
-11](#project-module-rights-management)
+[9.2.1. Project management 11](#project-management)
 
-[9.4.Project module: tips and tricks
-11](#project-module-tips-and-tricks)
+[9.2.2. Project management 11](#project-management-1)
 
-[10. Tips and tricks 13](#tips-and-tricks)
+[9.3. Project module: structure 11](#project-module-structure)
 
-[10.0 Installing CO-OP 13](#installing-co-op)
+[9.4. Project module: rights management
+12](#project-module-rights-management)
+
+[9.5.Project module: tips and tricks
+12](#project-module-tips-and-tricks)
+
+[10. Tips and tricks 14](#tips-and-tricks)
+
+[10.0 Installing CO-OP 14](#installing-co-op)
 
 [10.1. orga/orga_dept, place/place_space, building/building_room
-13](#orgaorga_dept-placeplace_space-buildingbuilding_room)
+15](#orgaorga_dept-placeplace_space-buildingbuilding_room)
 
-[10.2. Forum, debug, chat 14](#forum-debug-chat)
+[10.2. Forum, debug, chat 15](#forum-debug-chat)
 
-[10.3. Choice list. Pattern 14](#choice-list.-pattern)
+[10.3. Choice list. Pattern 15](#choice-list.-pattern)
 
-[10.4. RSS 14](#rss)
+[10.4. RSS 16](#rss)
 
 [10.5 Purging document and image files
-14](#purging-document-and-image-files)
+16](#purging-document-and-image-files)
 
 # 0. For those who don\'t read the manuals
 
@@ -120,17 +127,17 @@ Installing COOP is straightforward:
 
 -   start the tour.
 
-To change roles, simply use the following identifiers:
+**To change roles, simply use the following identifiers:**
 
--   viewer1@coopcoop.net
+-   **viewer1@coopcoop.net**
 
--   editor1@coopcoop.net
+-   **editor1@coopcoop.net**
 
--   supervisor1@coopcoop.net
+-   **supervisor1@coopcoop.net**
 
--   admin1@coopcoop.net
+-   **admin1@coopcoop.net**
 
-with password: CoopCoop1
+**with password: CoopCoop1**
 
 You can create new users, but you\'ll then need to switch to "admin"
 mode to set the rights of new administrators.
@@ -338,6 +345,32 @@ suffixes.
 In order to put a specific database online (groups D and E), it is
 necessary to ensure the development of the other components and at least
 the modules of group A.
+
+By default, CO-OP offers full functionality.
+
+If you wish to use CO-OP only for project management (group A, D, E),
+simply :
+
+-   rename the a_panels folder → a_panels_default
+
+-   rename the a_panels_project folder → a_panels
+
+-   rename the a_shells folder → a_panels_default
+
+-   rename the a_shells_project folder → a_shells
+
+If you wish to use CO-OP solely for managing an associative or corporate
+website (group A, B, C), simply:
+
+-   rename the folder a_panels → a_panels_default
+
+-   rename the folder a_panels_website → a_panels
+
+-   rename the folder a_shells → a_panels_default
+
+-   rename the folder a_shells_website→ a_shells.
+
+
 
 # 3.COOP modular approach
 
@@ -908,8 +941,7 @@ Project management is based on :
 
     -   a list of work packages
 
-
--   the **hub for each workpackage (workpackage_hub_display)** in three
+    -   the **hub for each workpackage (workpackage_hub_display)** in three
     sections:
 
     -   a dashboard (accessible only to supervisors) with summary data

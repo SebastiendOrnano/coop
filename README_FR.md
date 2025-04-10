@@ -21,83 +21,90 @@
 
 [1.3.1. Internationalisation 3](#internationalisation)
 
-[1.3.2. Bugs 3](#bugs)
+[1.3.2. Bugs 4](#bugs)
 
 [2. COOP structure générale 4](#coop-structure-générale)
 
-[3. COOP approche modulaire 4](#coop-approche-modulaire)
+[3. COOP approche modulaire 5](#coop-approche-modulaire)
 
-[3.1. Principe général 4](#principe-général)
+[3.1. Principe général 5](#principe-général)
 
-[3.2. Module simple 4](#module-simple)
+[3.2. Module simple 5](#module-simple)
 
 [3.3. Module complexe 5](#module-complexe)
 
 [3.4. Dépendance entre les modules 5](#dépendance-entre-les-modules)
 
-[3.5. Clonage des modules 5](#clonage-des-modules)
+[3.5. Clonage des modules 6](#clonage-des-modules)
 
 [4. Droits Permissions Privilèges des utilisateurs
-5](#droits-permissions-privilèges-des-utilisateurs)
+6](#droits-permissions-privilèges-des-utilisateurs)
 
-[4.1. Permissions CRUD 5](#permissions-crud)
+[4.1. Permissions CRUD 6](#permissions-crud)
 
-[4.2. Permissions Niveaux et Groupes 6](#permissions-niveaux-et-groupes)
+[4.2. Permissions Niveaux et Groupes 7](#permissions-niveaux-et-groupes)
 
 [4.3.Principe de distribution des droits sur les différents modules
 7](#principe-de-distribution-des-droits-sur-les-différents-modules)
 
-[5. Dossiers et fichiers 7](#dossiers-et-fichiers)
+[5. Dossiers et fichiers 8](#dossiers-et-fichiers)
 
-[5.1. Nommage des dossiers 7](#nommage-des-dossiers)
+[5.1. Nommage des dossiers 8](#nommage-des-dossiers)
 
-[5.2. Nommage des fichiers 7](#nommage-des-fichiers)
+[5.2. Nommage des fichiers 8](#nommage-des-fichiers)
 
 [5.3. Contenu des dossiers 8](#contenu-des-dossiers)
 
-[5.4. Contenu des fichiers 8](#contenu-des-fichiers)
+[5.4. Contenu des fichiers 9](#contenu-des-fichiers)
 
 [6. Structures des tables 9](#structures-des-tables)
 
 [6.1. Nommage des tables et des colonnes
 9](#nommage-des-tables-et-des-colonnes)
 
-[6.2. Structures des tables 9](#structures-des-tables-1)
+[6.2. Structures des tables 10](#structures-des-tables-1)
 
 [7. Volet « corporate » et « community »
 10](#volet-corporate-et-community)
 
 [8. PRM : Project Relationship Management
-10](#prm-project-relationship-management)
+11](#prm-project-relationship-management)
 
 [9. Module Projet 11](#module-projet)
 
 [9.1. Module Projet : orientation générale
 11](#module-projet-orientation-générale)
 
-[9.2. Module Projet : structure 11](#module-projet-structure)
-
-[9.3. Module Projet : gestion des droits
+[9.2. Module Projet : fonctionnalités
 12](#module-projet-fonctionnalités)
 
-[9.4. Module Projet : trucs et astuces
-12](#module-projet-trucs-et-astuces)
+[9.2.1. Pilotage du projet 12](#pilotage-du-projet)
 
-[10. Trucs et astuces 13](#trucs-et-astuces)
+[9.2.2. Gestion du projet 12](#gestion-du-projet)
 
-[10.0. Install CO-OP 13](#install-co-op)
+[9.3. Module Projet : structure 12](#module-projet-structure)
+
+[9.4. Module Projet : gestion des droits
+13](#module-projet-gestion-des-droits)
+
+[9.5. Module Projet : trucs et astuces
+13](#module-projet-trucs-et-astuces)
+
+[10. Trucs et astuces 15](#trucs-et-astuces)
+
+[10.0. Install CO-OP 15](#install-co-op)
 
 [10.1. orga/orga_dept, place/place_space, building/building_room
-14](#orgaorga_dept-placeplace_space-buildingbuilding_room)
+15](#orgaorga_dept-placeplace_space-buildingbuilding_room)
 
-[10.2. Forum, debug, chat 15](#forum-debug-chat)
+[10.2. Forum, debug, chat 16](#forum-debug-chat)
 
-[10.3. Liste de choix. Pattern 15](#liste-de-choix.-pattern)
+[10.3. Liste de choix. Pattern 16](#liste-de-choix.-pattern)
 
-[10.4. RSS 15](#rss)
+[10.4. RSS 17](#rss)
 
 [10.5 Purge des fichiers documents et images
-15](#purge-des-fichiers-documents-et-images)
+17](#purge-des-fichiers-documents-et-images)
 
 # 0. Pour ceux qui ne lisent pas les manuels
 
@@ -123,17 +130,18 @@ L'installation de COOP est classique :
 
 -   commencer la visite.
 
-Pour changer de rôle, il suffit d'utiliser les identifiants suivants :
+**Pour changer de rôle, il suffit d'utiliser les identifiants
+suivants :**
 
--   viewer1@coopcoop.net
+-   **viewer1@coopcoop.net**
 
--   editor1@coopcoop.net
+-   **editor1@coopcoop.net**
 
--   supervisor1@coopcoop.net
+-   **supervisor1@coopcoop.net**
 
--   admin1@coopcoop.net
+-   **admin1@coopcoop.net**
 
-avec le mot de passe : CoopCoop1
+**avec le mot de passe : CoopCoop1**
 
 Vous pouvez créer de nouveaux utilisateurs, mais vous devrez passer
 ensuite en mode « admin » pour fixer les droits des nouveaux
@@ -358,6 +366,30 @@ fonctions par des suffixes alphabétiques.
 Pour arriver à mettre en ligne une base de donnée spécifique (groupe D
 et E), il faut assurer aussi le développement des autres volets et au
 moins les modules du groupe A.
+
+Par défaut, CO-OP offre l'ensemble des fonctionnalités.
+
+Si l'on souhaite utiliser CO-OP uniquement pour de la gestion de projet
+(groupe A, D, E), il suffit de :
+
+-   renommer le dossier a_panels → a_panels_default
+
+-   renommer le dossier a_panels_project → a_panels
+
+-   renommer le dossier a_shells → a_panels_default
+
+-   renommer le dossier a_shells_project → a_shells
+
+Si l'on souhaite utiliser CO-OP uniquement pour de la gestion d'un site
+internet associatif ou d'entreprise (groupe A, B, C), il suffit de :
+
+-   renommer le dossier a_panels → a_panels_default
+
+-   renommer le dossier a_panels_website → a_panels
+
+-   renommer le dossier a_shells → a_panels_default
+
+-   renommer le dossier a_shells_website→ a_shells
 
 # 3. COOP approche modulaire
 
@@ -1136,7 +1168,7 @@ Le type de participation dépend du niveau dans le projet :
     intervenants non professionnel : maître d'ouvrage, membre de la
     famille, groupe d'entraide, bénévole.
 
-Dans CO-OP, il y a 2 tables participants distinctes
+Dans CO-OP, il y a 2 tables participant distinctes
 (workpackage_participants et worksequences_participants). On aurait pu
 imaginer une table unique avec un filtre suivant le type de
 participation mais cela complique la structuration des formulaires de
