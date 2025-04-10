@@ -9,5 +9,5 @@ section_status=:section_status,
 modified_at = CURRENT_TIMESTAMP
 WHERE section_id = $section_id
 
-RETURNING 'redirect' AS component, '/a_info/section_main_display_4.sql' AS link;
+RETURNING 'redirect' AS component, '/a_info/section_main_display_5.sql' AS link;
 

@@ -10,7 +10,7 @@ SELECT
     'button' as component,
     'sm'     as size;
 SELECT
-    '/a_info/section_mai_display_4.sql'     as link,
+    '/a_info/section_mai_display_5.sql'     as link,
      'warning' as color,
     'Retour à la liste des section'  as title,
     'arrow-back'  as icon;

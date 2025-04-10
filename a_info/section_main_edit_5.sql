@@ -6,11 +6,11 @@ select
     'Home' as title,
     '/'    as link;
 select 
-    'Gestion Admin'         as title,
+    'Gestion admin'         as title,
     '/a_panels/panel_admin_5.sql' as link;
-select 
-    'Gestion des sections d''aide'            as title,
-    '/a_info/section_help_display_5.sql' as link;
+ select 
+    'Liste des sections'            as title,
+    '/a_info/section_main_display_5.sql'     as link;   
 
 select 
     'form'                        as component,
@@ -18,8 +18,7 @@ select
     'Mettre à jour de la section' as validate,
     'Annuler'                     as reset,
     'green'                       as validate_color,
-    '/a_info/section_help_update_0.sql?section_id=' || (select section_id FROM  info_sections WHERE section_id = $section_id)  as action;
-
+    '/a_info/section_main_update_0.sql?section_id=' || (select section_id FROM  info_sections WHERE section_id = $section_id)  as action;
 
 select 
     'section_id' as name,
@@ -37,7 +36,7 @@ select
 
 select 
     'section_number'      as name,
-    'number'                as type,
+    'text'                as type,
     2                    AS width,
     'N° d''ordre de la section' as label,
     (select section_number  FROM  info_sections WHERE section_id = $section_id)   as value;
@@ -48,12 +47,17 @@ SELECT
     'Langue'                                     as label,
     TRUE                                         as required,
     2                                            AS width,
-    'Choisir la langue...'                       as empty_option,
-    (select section_lang  FROM  info_sections WHERE section_id = $section_id)   as value,
-   '[
-   {"label": "Français", "value": "FR"}, 
-   {"label": "English", "value":"EN"}
-   ]'                                            as options;
+    'section_status'        as name,
+    'statut de publication actuel'      as label,
+    'select'                            as type,
+    4                    AS width,
+    'choisir unstatut dans la liste...'    as  empty_option,
+    json_group_array(json_object('label',i.choice_label, 'value', i.choice_value))  AS options
+    FROM choices_items AS i
+    LEFT JOIN (select choice_category_id, choice_category_name from choices_categories)  AS c 
+    ON i.choice_category_id = c.choice_category_id
+    where choice_category_name="lang"
+    ORDER BY  i.choice_label ASC;
 
 
 SELECT 
@@ -61,14 +65,13 @@ SELECT
     'statut de publication actuel'      as label,
     'select'                            as type,
     4                    AS width,
-    '1: en attente de publication / 2 : publié / archive' as description,
-    (select section_status FROM  info_sections WHERE section_id = $section_id)   as value,
-    'Choisir le statut de publication...' as empty_option,
-    '[
-    {"label": "En attente de publication", "value": "no"},
-    {"label": "Publié", "value": "yes"},
-    {"label": "Archive", "value": "archived"}
-    ]' as options;
+    'choisir unstatut dans la liste...'    as  empty_option,
+    json_group_array(json_object('label',i.choice_label, 'value', i.choice_value))  AS options
+    FROM choices_items AS i
+    LEFT JOIN (select choice_category_id, choice_category_name from choices_categories)  AS c 
+    ON i.choice_category_id = c.choice_category_id
+    where choice_category_name="status"
+    ORDER BY  i.choice_label ASC;
 
 SELECT 
     'section_title' as name,
@@ -82,12 +85,4 @@ SELECT
     'Contenu de la section' as label,
     (select section_content  FROM info_sections WHERE section_id = $section_id) as value;
 
-SELECT
-    'button' as component,
-    'sm'     as size;
-SELECT
-    '/a_info/section_display_5.sql'     as link,
-     'warning' as color,
-    'Annuler'  as title,
-    'arrow-back'  as icon;
 

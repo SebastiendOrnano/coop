@@ -7,7 +7,7 @@ select
     '/'    as link;
 select 
     'Gestion Admin'         as title,
- '/a_panels/panel_admin_5.sql' as link;
+    '/a_panels/panel_admin_5.sql' as link;
 
 select 
     'Gestion des sections d''aide'            as title,
