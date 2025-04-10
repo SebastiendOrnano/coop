@@ -12,6 +12,13 @@ select
     'Vous êtes loggé comme :  '||$username            as description_md;
 
 select 
+    'INFO SITE'                                    as title,
+    'Infos administratives... sur le site'          as description,
+    'help-octagon'                                  as icon,
+    'green'                                         as color,
+    '/a_info/section_main_display_5.sql'            as link;
+
+select 
     '/a_users/user_new_display_5.sql'       as link,
     'red'                                   as color,
     'NEW USERS'                             as title,

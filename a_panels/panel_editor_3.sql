@@ -43,8 +43,8 @@ select
     'blue'                                          as color;
 
 select 
-    'PROJECTS'                                   as title,
-    '/e_projects/project_main_display_3.sql'       as link,
+    'project'                                   as title,
+    '/e_project/project_main_display_3.sql'       as link,
     'Gestion des projets'         as description,
     'chart-dots-2'                                         as icon,
     'yellow'                                        as color;

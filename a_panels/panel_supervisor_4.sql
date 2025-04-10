@@ -16,8 +16,8 @@ select
     'Vous êtes loggé comme :  '||$username          as description_md;
 
 select 
-    'PROJECTS'                                   as title,
-    '/e_projects/project_main_display_4.sql'       as link,
+    'project'                                   as title,
+    '/e_project/project_main_display_4.sql'       as link,
     'Gestion des projets'         as description,
     'chart-dots-2'                                         as icon,
     'yellow'                                        as color;
@@ -61,12 +61,7 @@ select
     'datagrid_panel'                                 as class,
     'Vous êtes loggé comme :  '||$username           as description_md;
 
-select 
-    'Infos site'                                    as title,
-    'Infos administratives... sur le site'          as description,
-    'help-octagon'                                  as icon,
-    'green'                                         as color,
-    '/a_info/section_main_display_4.sql'            as link;
+
 
 select 
     'Gestion de la faq'                             as title,
