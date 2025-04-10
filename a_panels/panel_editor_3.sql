@@ -59,14 +59,14 @@ select
 
 
 select 
-    'Gestion des événenements'                    as title,
+    'EVENTS'                    as title,
     '/c_meetings/meeting_main_display_3.sql'      as link,
     'Gestion des évenements'                      as description,
     'list-details'                                as icon,
     'green'                                       as color;
 
 select 
-    'Actus'                                      as title,
+    'NEWS'                                      as title,
     '/b_news/news_main_display_3.sql'            as link,
     'News'                                       as description,
     'text-scan-2'                                as icon,

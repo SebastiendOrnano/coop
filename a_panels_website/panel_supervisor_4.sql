@@ -7,51 +7,6 @@ SET username = (
 ); 
 
 
-
-select 
-    'datagrid'                                      as component,
-    'GESTION DES PROJETS'                           as title,
-    'project_supervisor_panel'                      as id,
-    'datagrid_panel'                                as class,
-    'Vous êtes loggé comme :  '||$username          as description_md;
-
-select 
-    'project'                                   as title,
-    '/e_project/project_main_display_4.sql'       as link,
-    'Gestion des projets'         as description,
-    'chart-dots-2'                                         as icon,
-    'yellow'                                        as color;
-
-
-select 
-    'PERSONS'                            as title,
-    '/d_prm1/prm1_main_display_4.sql'           as link,
-    'Création, suivi des personnes physiques' as description,
-    'user-plus'                                      as icon,
-     'green'                                         as color;
-
-select 
-    'COMPAGNIES'                     as title,
-    '/d_prm2/prm2_main_display_4.sql'               as link,
-    'Création, suivi des organisations'             as description,
-    'affiliate'                                     as icon,
-    'red'                                           as color;
-
-select 
-    'TEAMS'                     as title,
-    '/d_prm3/prm3_main_display_4.sql'               as link,
-    'Création, suivi des groupes'                   as description,
-    'users-group'                                   as icon,
-    'blue'                                          as color;
-
-select           
-    'WORKSPACES'                                 as title,
-    '/c_workspaces/workspace_main_display_4.sql'  as link,
-    'Groupes de travail'                          as description,
-    'users-group'                                 as icon,
-    'green'                                        as color;
-
-
 select 
     'datagrid'                                       as component,
     'GESTION DU SITE INTERNET'                       as title,
@@ -135,3 +90,11 @@ select
     'PROCESS'                                  as title,
     'Processus'                                as description,
     'automation'                               as icon;
+
+select           
+    'WORKSPACES'                                 as title,
+    '/c_workspaces/workspace_main_display_4.sql'  as link,
+    'Groupes de travail'                          as description,
+    'users-group'                                 as icon,
+    'green'                                        as color;
+
